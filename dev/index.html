@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+  <title>Matthew Tsui</title>
+</head>
+<body ng-app="BlankApp" ng-cloak>
+  <div ng-controller="AppCtrl" ng-cloak>
+  
+  <md-content>
+    <ng-include src="'nav.html'" flex></ng-include> 
+    <ng-include src="'about.html'" flex></ng-include>
+
+
+    <style type="text/css">
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+    </style>
+    <code class="element"></code>
+     <md-select ng-model="currentProfile" style="width:140px;">
+          <md-option ng-repeat="profile in profiles" value="{{profile.name}}" ng-click="selectProfile(profile.id)">
+            <code>{{profile.name}}</code>
+          </md-option>
+        </md-select>
+  </md-content>
+  </div>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Typed.js , needs jquery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+  
+  <script type="text/javascript">
+    $(function(){
+      $(".element").typed({
+        strings: ["Hello, my name is Matthew Tsui, and I'm a "],
+        typeSpeed: 0
+      });
+  });
+  </script>
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    var app = angular.module('BlankApp', ['ngMaterial']);
+
+
+    app.controller('AppCtrl', function($scope) {
+        $scope.currentProfile;
+        $scope.selectedIndex = -1;
+      $scope.profiles = [
+        {name:'Developer',id:0},
+        {name:'Designer',id:1},
+        {name:'Rock Climber',id:2},
+        {name:'Gamer',id:3}
+      ];
+      var profileTabs = $('#profile-content');
+      $scope.selectProfile = function(id){
+        $scope.selectedIndex = id;
+        console.log(id);
+      }
+    });
+  </script>
+  
+</body>
+</html>
