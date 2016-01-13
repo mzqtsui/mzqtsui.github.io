@@ -3,48 +3,52 @@
 <head>
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+
 
   <title>Matthew Tsui</title>
 </head>
-<body ng-app="BlankApp" ng-cloak>
-  <div ng-controller="AppCtrl" ng-cloak>
+<body ng-app="BlankApp" ng-cloak ng-controller="AppCtrl">
+<!--       <ng-include src="'nav.html'" flex></ng-include> 
+ -->
+  <md-content class="transparent-bg" layout="column" layout-align="start center">
+    
+    
+    <section id="intro">
+     
+      <div flex="80" flex-offset="10" class="md-padding" layout="column" layout-align="center center">
+        <h1 id="name">Matthew Tsui</h1>
+          
+        <span>
+        Currently finishing a Bachelor of Computer Science (Software Engineering) and a Bachelor of Business Administration (Marketing), Matt is looking for employment to start <green>November 2016</green>. Some previous work includes website and cross-platform app work at <a class="blue" href>Palette</a>, Angular webapp development at <a class="blue" href>Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href>Christie Digital</a>.
+        <br>
+        <br>
+        <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span>
+        </span>
+      </div>
+
+   
+     
+    </section>
+    
   
-  <md-content>
-    <ng-include src="'nav.html'" flex></ng-include> 
-    <ng-include src="'about.html'" flex></ng-include>
 
+    
 
-    <style type="text/css">
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-    </style>
-    <code class="element"></code>
-     <md-select ng-model="currentProfile" style="width:140px;">
-          <md-option ng-repeat="profile in profiles" value="{{profile.name}}" ng-click="selectProfile(profile.id)">
+<!--     <div id="intro" layout="row" layout-align="center center" class="md-padding">
+      <code class="intro-typed"></code>
+       <md-select ng-model="currentProfile" style="width:140px;">
+          <md-option ng-repeat="profile in profiles" value="{{profile}}" ng-click="selectProfile(profile.id)">
             <code>{{profile.name}}</code>
           </md-option>
         </md-select>
+    </div>
+
+    <ng-include src="'about.html'" flex></ng-include> -->
   </md-content>
-  </div>
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
@@ -55,17 +59,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  <!-- Typed.js , needs jquery-->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
   
-  <script type="text/javascript">
-    $(function(){
-      $(".element").typed({
-        strings: ["Hello, my name is Matthew Tsui, and I'm a "],
-        typeSpeed: 0
-      });
-  });
-  </script>
 
   <!-- Your application bootstrap  -->
   <script type="text/javascript">    
@@ -76,8 +70,7 @@
 
 
     app.controller('AppCtrl', function($scope) {
-        $scope.currentProfile;
-        $scope.selectedIndex = -1;
+      $scope.selectedIndex = -1;
       $scope.profiles = [
         {name:'Developer',id:0},
         {name:'Designer',id:1},
@@ -87,8 +80,13 @@
       var profileTabs = $('#profile-content');
       $scope.selectProfile = function(id){
         $scope.selectedIndex = id;
-        console.log(id);
       }
+    });
+
+    app.config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+        .primaryPalette('blue')
+        .accentPalette('deep-orange')
     });
   </script>
   
