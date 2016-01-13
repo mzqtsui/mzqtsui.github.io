@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
   <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
 
 
@@ -19,20 +20,42 @@
     <section id="intro">
      
       <div flex="80" flex-offset="10" class="md-padding" layout="column" layout-align="center center">
-        <h1 id="name">Matthew Tsui</h1>
+        <h1 id="name"><span>Matthew</span>Tsui</h1>
+        <h4 id="subtitle" layout="row" layout-align="space-between center" style=""><span>Developer</span>  <pink>.</pink>  <span>Designer</span>  <pink>.</pink>  <span>Climber</span>  <pink>.</pink>  <span>Gamer</span></h4>
           
-        <span>
-        Currently finishing a Bachelor of Computer Science (Software Engineering) and a Bachelor of Business Administration (Marketing), Matt is looking for employment to start <green>November 2016</green>. Some previous work includes website and cross-platform app work at <a class="blue" href>Palette</a>, Angular webapp development at <a class="blue" href>Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href>Christie Digital</a>.
-        <br>
-        <br>
-        <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);</script>
-<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span>
-        </span>
+        <div>
+        Currently finishing a B. Computer Science (Software Engineering) and a B. Business Administration (Marketing), Matt is looking for employment to start <green>November 2016</green>. Some previous work includes website and cross-platform app work at <a class="blue" id="palette" href>Palette Gear</a>, Angular webapp development at <a class="blue" href>Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href>Christie Digital</a>. Also made an Android App called <a class="blue" href>FastCards</a>.
+<!--         <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span> -->
+        </div>
+
+        <div id="toolbar" layout="row" layout-align="center center">
+          <md-button class="md-fab" aria-label="Resume">
+            <i class="fa fa-file" style="font-size:24px;position:relative;top:2px;"></i>
+            <md-tooltip>
+              Resume
+            </md-tooltip>
+          </md-button>
+          <md-button class="md-fab" aria-label="Email">
+            <i class="fa fa-send" style="font-size:24px;position:relative;top:2px;"></i>
+            <md-tooltip>
+              Email
+            </md-tooltip>
+          </md-button>
+          <md-button class="md-fab" aria-label="Linkedin">
+            <i class="fa fa-linkedin" style="font-size:24px;position:relative;top:2px;"></i>
+            <md-tooltip>
+              Linkedin
+            </md-tooltip>
+          </md-button>
+        </div>
       </div>
 
    
      
     </section>
+
+
     
   
 
@@ -69,7 +92,7 @@
     var app = angular.module('BlankApp', ['ngMaterial']);
 
 
-    app.controller('AppCtrl', function($scope) {
+    app.controller('AppCtrl', function($scope,$mdDialog) {
       $scope.selectedIndex = -1;
       $scope.profiles = [
         {name:'Developer',id:0},
@@ -81,12 +104,18 @@
       $scope.selectProfile = function(id){
         $scope.selectedIndex = id;
       }
+
+      var palettelink = $('#palette');
+      console.log(palettelink);
+
+
+
     });
 
     app.config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('blue')
-        .accentPalette('deep-orange')
+        .accentPalette('orange')
     });
   </script>
   
