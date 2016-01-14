@@ -69,6 +69,20 @@ h1{
 }
 #toolbar{
     margin-top:20px;
+    margin-bottom:40px;
+    .md-button{
+        min-width:46px;
+        min-height:46px;
+        border-radius:50%;
+    }
+    .md-ripple-container{
+        border-radius:50%;
+    }
+    .fa{
+        font-size:20px;
+        color: lighten($c_pink,5%);
+        line-height:46px;
+    }
 }
 .transparent-bg{
     background:none !important;
@@ -78,3 +92,7 @@ h1{
     font-family:"Roboto";
     font-weight:400;
 }
+md-tooltip{
+    font-size:12px;
+}
+
