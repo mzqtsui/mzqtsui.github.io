@@ -24,26 +24,26 @@
         <h4 id="subtitle" layout="row" layout-align="space-between center" style=""><span>Developer</span>  <pink>.</pink>  <span>Designer</span>  <pink>.</pink>  <span>Climber</span>  <pink>.</pink>  <span>Gamer</span></h4>
           
         <div>
-        Currently finishing a B. Computer Science (Software Engineering) and a B. Business Administration (Marketing), Matt is looking for employment to start <green>November 2016</green>. Some previous work includes website and cross-platform app work at <a class="blue" id="palette" href>Palette Gear</a>, Angular webapp development at <a class="blue" href>Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href>Christie Digital</a>. Also made an Android App called <a class="blue" href>FastCards</a>.
+        Currently finishing a B. Computer Science (Software Engineering) and a B. Business Administration (Marketing), Matt is looking for employment to start <green>November 2016</green>. Previous experience includes website and cross-platform C++ work at <a class="blue" id="palette" href="//palettegear.com/" target="_blank">Palette Gear</a>, complex Angular webapp development at <a class="blue" href="//www.imaginecommunications.com/" target="_blank">Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href="//www.christiedigital.com/en-us" target="_blank">Christie Digital</a>. In 2015, he made an Android flashcard app called <a class="blue" href="//play.google.com/store/apps/details?id=com.fastcards" target="_blank">FastCards</a>.
 <!--         <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
 <noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span> -->
         </div>
 
         <div id="toolbar" layout="row" layout-align="center center">
-          <md-button class="md-fab" aria-label="Resume">
-            <i class="fa fa-file" style="font-size:24px;position:relative;top:2px;"></i>
+          <md-button class="" aria-label="Resume">
+            <i class="fa fa-file-text"></i>
             <md-tooltip>
               Resume
             </md-tooltip>
           </md-button>
-          <md-button class="md-fab" aria-label="Email">
-            <i class="fa fa-send" style="font-size:24px;position:relative;top:2px;"></i>
+          <md-button class="" aria-label="Email" ng-click="sendMail()">
+            <i class="fa fa-send" style="left:0;"></i>
             <md-tooltip>
               Email
             </md-tooltip>
           </md-button>
-          <md-button class="md-fab" aria-label="Linkedin">
-            <i class="fa fa-linkedin" style="font-size:24px;position:relative;top:2px;"></i>
+          <md-button class="" aria-label="Linkedin" href="//www.linkedin.com/in/mzqtsui">
+            <i class="fa fa-linkedin"></i>
             <md-tooltip>
               Linkedin
             </md-tooltip>
@@ -92,7 +92,7 @@
     var app = angular.module('BlankApp', ['ngMaterial']);
 
 
-    app.controller('AppCtrl', function($scope,$mdDialog) {
+    app.controller('AppCtrl', function($scope,$mdDialog,$window) {
       $scope.selectedIndex = -1;
       $scope.profiles = [
         {name:'Developer',id:0},
@@ -105,19 +105,14 @@
         $scope.selectedIndex = id;
       }
 
-      var palettelink = $('#palette');
-      console.log(palettelink);
-
-
-
-    });
-
-    app.config(function($mdThemingProvider) {
-      $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
-        .accentPalette('orange')
+      $scope.sendMail = function(){
+        $window.open("znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+      }
     });
   </script>
+
+  <!--         <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span> -->
   
 </body>
 </html>
