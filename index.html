@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>Matthew Tsui</title>
+</head>
+<body ng-app="BlankApp" ng-cloak ng-controller="AppCtrl">
+  <md-content class="transparent-bg" layout="column" layout-align="start center">
+    <section id="intro">
+     
+      <div flex="80" flex-offset="10" class="md-padding" layout="column" layout-align="center center">
+        <h1 id="name"><span>Matthew</span>Tsui</h1>
+        <h4 id="subtitle" layout="row" layout-align="space-between center" style=""><span>Developer</span>  <pink>.</pink>  <span>Designer</span>  <pink>.</pink>  <span>Climber</span>  <pink>.</pink>  <span>Gamer</span></h4>
+          
+        <div>
+        Currently finishing a B. Computer Science (Software Engineering) and a B. Business Administration (Marketing), Matt is looking for a job to start <green>November 2016</green>. Previous experience includes website and cross-platform C++ work at <a class="blue" id="palette" href="//palettegear.com/" target="_blank">Palette Gear</a>, complex Angular webapp development at <a class="blue" href="//www.imaginecommunications.com/" target="_blank">Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href="//www.christiedigital.com/en-us" target="_blank">Christie Digital</a>. In 2015, he made an Android flashcard app called <a class="blue" href="//play.google.com/store/apps/details?id=com.fastcards" target="_blank">FastCards</a>.
+        </div>
+
+        <div id="toolbar" layout="row" layout-align="center center">
+          <md-button class="" aria-label="Resume"  href="resume.pdf" target="_blank">
+            <i class="fa fa-file-text"></i>
+            <md-tooltip>
+              Resume
+            </md-tooltip>
+          </md-button>
+          <md-button class="" aria-label="Email" ng-click="sendMail()">
+            <i class="fa fa-send" style="left:0;"></i>
+            <md-tooltip>
+              Email
+            </md-tooltip>
+          </md-button>
+          <md-button class="" aria-label="Linkedin" href="//www.linkedin.com/in/mzqtsui" target="_blank">
+            <i class="fa fa-linkedin"></i>
+            <md-tooltip>
+              Linkedin
+            </md-tooltip>
+          </md-button>
+        </div>
+      </div>
+    </section>
+  </md-content>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    var app = angular.module('BlankApp', ['ngMaterial']);
+
+
+    app.controller('AppCtrl', function($scope,$window) {
+      $scope.sendMail = function(){
+        $window.open("znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+      }
+    });
+  </script>
+</body>
+</html>
