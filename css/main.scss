@@ -6,13 +6,15 @@ $c_pink: rgba(249,38,114,1);
 $c_green: rgba(166,226,46,1);
 $c_blue: rgba(102,217,239,1);
 $c_orange: rgba(253,151,31,1);
+$f_serif: "Roboto Slab", "Times New Roman", serif;
+$f_sans: Roboto, Helvetica, Arial, sans-serif;
 
 section{
     font-size:16px;
     text-align:center;
     background:$c_gray;
     color:lighten($c_gray, 60%);
-    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-family: $f_serif;
     >div{
         min-height:100vh;
     }
@@ -46,7 +48,7 @@ a{
 
 
 h1{
-    font-family:Roboto, Helvetica, Arial, sans-serif;
+    font-family: $f_sans;
     font-weight:300;
     font-size:50px;
 }
@@ -60,12 +62,18 @@ h1{
     }
 }
 #subtitle{
-    font-family:Roboto, Helvetica, Arial, sans-serif;
+    font-family:$f_sans;
     font-weight:300;
     font-size:18px;
     margin-top:0;
     letter-spacing:0.8px;
     width:350px;
+}
+
+#intro{
+    article{
+        line-height:1.4;
+    }
 }
 #toolbar{
     margin-top:20px;
@@ -89,7 +97,7 @@ h1{
     color:white;
 }
 .nav{
-    font-family:"Roboto";
+    font-family:$f_sans;
     font-weight:400;
 }
 md-tooltip{
