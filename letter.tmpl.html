@@ -1,0 +1,26 @@
+<md-dialog aria-label="Cover Letter"  ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{ thisLetter.greeting }}</h2>
+        
+          <div class="element">
+          </div>
+        <span flex></span>
+        <md-button aria-label="close" class="md-icon-button" ng-click="cancel()">
+          <i class="fa fa-2x fa-close"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <p ng-repeat="paragraph in thisLetter.text">
+          {{paragraph}}
+        </p>
+        <p>
+          Regards,
+          Matthew Tsui
+        </p>
+      </div>
+    </md-dialog-content>
+</md-dialog>
+

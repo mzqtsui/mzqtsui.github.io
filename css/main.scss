@@ -1,0 +1,98 @@
+body{
+}
+
+$c_gray: rgba(39,40,34,1);
+$c_pink: rgba(249,38,114,1);
+$c_green: rgba(166,226,46,1);
+$c_blue: rgba(102,217,239,1);
+$c_orange: rgba(253,151,31,1);
+
+section{
+    font-size:16px;
+    text-align:center;
+    background:$c_gray;
+    color:lighten($c_gray, 60%);
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    >div{
+        min-height:100vh;
+    }
+}
+
+pink, .pink{
+    color: $c_pink;
+}
+
+green, .green{
+    color: $c_green;
+}
+
+blue, .blue{
+    color: $c_blue;
+}
+orange, .orange{
+    color: $c_orange;
+}
+a{
+    &:hover{
+        font-style:italic;
+    }
+}
+
+
+
+
+
+
+
+
+h1{
+    font-family:Roboto, Helvetica, Arial, sans-serif;
+    font-weight:300;
+    font-size:50px;
+}
+#name{
+    
+    color: $c_orange;
+    margin-bottom:0;
+    text-transform: uppercase;
+    span{
+        font-weight:700;
+    }
+}
+#subtitle{
+    font-family:Roboto, Helvetica, Arial, sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-top:0;
+    letter-spacing:0.8px;
+    width:350px;
+}
+#toolbar{
+    margin-top:20px;
+    margin-bottom:40px;
+    .md-button{
+        min-width:46px;
+        min-height:46px;
+        border-radius:50%;
+    }
+    .md-ripple-container{
+        border-radius:50%;
+    }
+    .fa{
+        font-size:20px;
+        color: lighten($c_pink,5%);
+        line-height:46px;
+    }
+}
+.transparent-bg{
+    background:none !important;
+    color:white;
+}
+.nav{
+    font-family:"Roboto";
+    font-weight:400;
+}
+md-tooltip{
+    font-size:12px;
+}
+

@@ -8,10 +8,15 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
 
+
   <title>Matthew Tsui</title>
 </head>
 <body ng-app="BlankApp" ng-cloak ng-controller="AppCtrl">
+<!--       <ng-include src="'nav.html'" flex></ng-include> 
+ -->
   <md-content class="transparent-bg" layout="column" layout-align="start center">
+    
+    
     <section id="intro">
      
       <div flex="80" flex-offset="10" class="md-padding" layout="column" layout-align="center center">
@@ -20,6 +25,8 @@
           
         <div>
         Currently finishing a B. Computer Science (Software Engineering) and a B. Business Administration (Marketing), Matt is looking for a job to start <green>November 2016</green>. Previous experience includes website and cross-platform C++ work at <a class="blue" id="palette" href="//palettegear.com/" target="_blank">Palette Gear</a>, complex Angular webapp development at <a class="blue" href="//www.imaginecommunications.com/" target="_blank">Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href="//www.christiedigital.com/en-us" target="_blank">Christie Digital</a>. In 2015, he made an Android flashcard app called <a class="blue" href="//play.google.com/store/apps/details?id=com.fastcards" target="_blank">FastCards</a>.
+<!--         <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span> -->
         </div>
 
         <div id="toolbar" layout="row" layout-align="center center">
@@ -43,7 +50,27 @@
           </md-button>
         </div>
       </div>
+
+   
+     
     </section>
+
+
+    
+  
+
+    
+
+<!--     <div id="intro" layout="row" layout-align="center center" class="md-padding">
+      <code class="intro-typed"></code>
+       <md-select ng-model="currentProfile" style="width:140px;">
+          <md-option ng-repeat="profile in profiles" value="{{profile}}" ng-click="selectProfile(profile.id)">
+            <code>{{profile.name}}</code>
+          </md-option>
+        </md-select>
+    </div>
+
+    <ng-include src="'about.html'" flex></ng-include> -->
   </md-content>
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -55,6 +82,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  
 
   <!-- Your application bootstrap  -->
   <script type="text/javascript">    
@@ -64,11 +92,27 @@
     var app = angular.module('BlankApp', ['ngMaterial']);
 
 
-    app.controller('AppCtrl', function($scope,$window) {
+    app.controller('AppCtrl', function($scope,$mdDialog,$window) {
+      $scope.selectedIndex = -1;
+      $scope.profiles = [
+        {name:'Developer',id:0},
+        {name:'Designer',id:1},
+        {name:'Rock Climber',id:2},
+        {name:'Gamer',id:3}
+      ];
+      var profileTabs = $('#profile-content');
+      $scope.selectProfile = function(id){
+        $scope.selectedIndex = id;
+      }
+
       $scope.sendMail = function(){
         $window.open("znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
       }
     });
   </script>
+
+  <!--         <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@iust.qz.wehttam</span></noscript></span> -->
+  
 </body>
 </html>
