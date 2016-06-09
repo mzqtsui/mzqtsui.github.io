@@ -50,7 +50,7 @@ a{
 h1{
     font-family: $f_sans;
     font-weight:300;
-    font-size:50px;
+    font-size:44px;
 }
 #name{
     
@@ -64,10 +64,10 @@ h1{
 #subtitle{
     font-family:$f_sans;
     font-weight:300;
-    font-size:18px;
+    font-size:17px;
     margin-top:0;
     letter-spacing:0.8px;
-    width:350px;
+    width:306px;
 }
 
 #intro{
@@ -90,6 +90,9 @@ h1{
         font-size:20px;
         color: lighten($c_pink,5%);
         line-height:46px;
+    }
+    .fa-github{
+        font-size:24px;
     }
 }
 .transparent-bg{
