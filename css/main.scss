@@ -14,6 +14,8 @@ $c_orange: rgba(253,151,31,1);
 $f_serif: "Roboto Slab", "Times New Roman", serif;
 $f_sans: Roboto, Helvetica, Arial, sans-serif;
 
+$md-whiteframe-4dp: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+
 section{
     font-size:16px;
     color:lighten(rgba(66,66,66 ,1), 20%);
@@ -34,11 +36,7 @@ blue, .blue{
 orange, .orange{
     color: $c_orange;
 }
-a{
-    &:hover{
-        font-style:italic;
-    }
-}
+
 
 
 md-card img{
@@ -74,6 +72,11 @@ h1{
     font-family: $f_sans;
     font-weight:300;
     font-size:44px;
+    color: rgba(66,66,66 ,1);
+    text-transform: uppercase;
+    span{
+        font-weight:700;
+    }
 }
 h2{
     text-align:center;
@@ -83,13 +86,9 @@ h2{
     text-transform: uppercase;
 }
 #name{
-    
-    color: rgba(66,66,66 ,1);
     margin-bottom:0;
-    text-transform: uppercase;
-    span{
-        font-weight:700;
-    }
+    
+    
 }
 #subtitle{
     font-family:$f_sans;
@@ -126,8 +125,21 @@ h2{
 }
 #featured{
     font-family: $f_sans;
-    md-card{
+    .project{
+        outline:none;
         max-width:320px;
+        transition: all 0.2s;
+
+        &:hover{
+            cursor:pointer;
+            box-shadow: $md-whiteframe-4dp;
+        }
+    }
+
+    @media (max-width: 880px) {
+      .project{
+        max-width:460px;
+    }
     }
 
     h3{
@@ -137,7 +149,7 @@ h2{
         font-size:1rem;
     }
 
-    .roles{
+    .desc{
         font-size:0.9rem;
         text-align:left;
     }
@@ -151,7 +163,33 @@ md-tooltip{
 }
 
 footer{
+    width:100%;
     margin-bottom:20px;
     font-size:0.8rem;
+    text-align:right;
+    margin-right:20px;
+    opacity:0.6;
+}
 
+md-dialog{
+    max-width:600px;
+    img{
+        margin: auto; 
+        max-width: 100%;
+    }
+    h1{
+        margin-top:0;
+        margin-bottom:10px;
+    }
+    p{
+        font-size:1rem;
+    }
+    .md-dialog-content{
+        padding-bottom:0;
+    }
+    .close-button{
+        position:absolute;
+        top:6px;
+        right:0;
+    }
 }
