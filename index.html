@@ -21,13 +21,11 @@
     
     <section id="intro">
      
-      <div flex="80" flex-offset="10" flex-md="60" flex-offset-md="20" flex-lg="40" flex-offset-lg="30" class="md-padding" layout="column" layout-align="center center">
+
         <h1 id="name"><span>Matthew</span>Tsui</h1>
         <h4 id="subtitle" layout="row" layout-align="space-between center" style=""><span>Developer</span>  <pink>.</pink>  <span>Designer</span>  <pink>.</pink>  <span>Climber</span>  <pink>.</pink>  <span>Gamer</span></h4>
           
-        <article>
-        Currently finishing a BCS and a BBA, Matt is looking for a job to start <green>November 2016</green>. He used to do website and cross-platform C++ work at <a class="blue" id="palette" href="//palettegear.com/" target="_blank">Palette Gear</a>, complex Angular webapp development at <a class="blue" href="//www.imaginecommunications.com/" target="_blank">Imagine Communications</a>, and a 3D projector-mapped Unity game at <a class="blue" href="//www.christiedigital.com/en-us" target="_blank">Christie Digital</a>. In 2015, he made an Android flashcard app called <a class="blue" href="//play.google.com/store/apps/details?id=com.fastcards" target="_blank">FastCards</a>.
-        </article>
+
 
         <div id="toolbar" layout="row" layout-align="center center">
           <md-button class="" aria-label="Resume"  href="/Resume.pdf" target="_blank">
@@ -55,9 +53,39 @@
             </md-tooltip>
           </md-button>
         </div>
+    </section>
+    <section id="featured">
+      <h2>Projects</h2>
+      <div flex="80" flex-offset="10" flex-xs="100" flex-offset-xs="0" flex-gt-lg="60" flex-offset-gt-lg="0" class="md-padding" layout="row" layout-align="center center" layout-wrap>
+        <md-card flex-gt-sm="33" flex-sm="49" flex-xs="100" ng-repeat="p in projects">
+          <img ng-src="{{::p.img}}" class="md-card-image" alt="Material Red">
+          <md-card-content layout="column">
+            <div>
+              <h3>{{::p.name}} <data style="float:right;font-weight:300;">{{::p.date}}</data></h3>
+              
+            </div>
+            <div class="roles">{{::p.roles}}</div>
+     <!--      <div flex="50" style="text-align:right;">
+            <md-button class="md-icon-button" aria-label="Medium" href="//medium.com/@matt.tsui/recreating-material-wallpapers-in-svg-21f4949d76f2" target="_blank">
+              <md-icon md-font-icon="fa-medium" class="fa fa-lg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Codepen" href="//codepen.io/mzqtsui/pen/NrpoNG" target="_blank">
+              <md-icon md-font-icon="fa-codepen" class="fa fa-lg"></md-icon>
+           </md-button>
+          </div> -->
+          </md-card-content>
+        </md-card>
       </div>
     </section>
+    <section id="experience">
+      <h2>Work Experience</h2>
+      
+    </section>
 
+    <section id="education">
+      <h2>Education</h2>
+
+    </section>
 
     
   
@@ -96,17 +124,46 @@
 
 
     app.controller('AppCtrl', function($scope,$mdDialog,$window) {
-      $scope.selectedIndex = -1;
-      $scope.profiles = [
-        {name:'Developer',id:0},
-        {name:'Designer',id:1},
-        {name:'Rock Climber',id:2},
-        {name:'Gamer',id:3}
+      
+      $scope.projects = [
+        {
+          name: 'Material Red',
+          roles: 'Web Developer',
+          img: 'img/material_red.jpg',
+          date: '2016'
+        },
+        {
+          name: 'Palette Website',
+          roles: 'Design, Development, Illustration',
+          img: 'img/palette.jpg',
+          date: '2015'
+        },
+        {
+          name: 'PaletteApp2',
+          roles: 'Software Developer',
+          img: 'img/paletteapp2.jpg',
+          date: '2015'
+        },
+        {
+          name: 'FastCards',
+          roles: 'Android Dev, Icon Design',
+          img: 'img/fastcards_logo.jpg',
+          date: '2015'
+        },
+        {
+          name: 'Slate',
+          roles: 'Game Design, UI',
+          img: 'img/slate.jpg',
+          date: '2014'
+        },
+        {
+          name: 'Foodspokes',
+          roles: 'Web Developer',
+          img: 'img/foodspokes.jpg',
+          date: '2014'
+        }
       ];
-      var profileTabs = $('#profile-content');
-      $scope.selectProfile = function(id){
-        $scope.selectedIndex = id;
-      }
+
 
       $scope.sendMail = function(){
         $window.open("znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));

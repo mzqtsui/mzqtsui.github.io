@@ -1,6 +1,11 @@
 body{
+    background: rgba(236,239,241 ,1);
+    color: rgba(69,90,100 ,1);
+    font-size:62.5%;
 }
-
+md-content{
+    background: rgba(236,239,241 ,1);
+}
 $c_gray: rgba(39,40,34,1);
 $c_pink: rgba(249,38,114,1);
 $c_green: rgba(166,226,46,1);
@@ -12,12 +17,8 @@ $f_sans: Roboto, Helvetica, Arial, sans-serif;
 section{
     font-size:16px;
     text-align:center;
-    background:$c_gray;
-    color:lighten($c_gray, 60%);
-    font-family: $f_serif;
-    >div{
-        min-height:100vh;
-    }
+    color:lighten(rgba(66,66,66 ,1), 20%);
+    font-family: $f_sans;
 }
 
 pink, .pink{
@@ -41,7 +42,9 @@ a{
 }
 
 
-
+md-card img{
+    width:100%;
+}
 
 
 
@@ -52,9 +55,14 @@ h1{
     font-weight:300;
     font-size:44px;
 }
+h2{
+    font-size:1.8rem;
+    font-weight:300;
+    text-transform: uppercase;
+}
 #name{
     
-    color: $c_orange;
+    color: rgba(66,66,66 ,1);
     margin-bottom:0;
     text-transform: uppercase;
     span{
@@ -95,9 +103,23 @@ h1{
         font-size:24px;
     }
 }
-.transparent-bg{
-    background:none !important;
-    color:white;
+#featured{
+    font-family: $f_sans;
+    md-card{
+        max-width:360px;
+    }
+
+    h3{
+        font-family:$f_sans;
+        margin:0;
+        text-align:left;
+        font-size:1rem;
+    }
+
+    .roles{
+        font-size:0.9rem;
+        text-align:left;
+    }
 }
 .nav{
     font-family:$f_sans;
@@ -106,4 +128,3 @@ h1{
 md-tooltip{
     font-size:12px;
 }
-
