@@ -64,22 +64,13 @@
     <section id="featured">
       <h2>Projects</h2>
       <div flex="80" flex-offset="10" flex-xs="100" flex-offset-xs="0" flex-gt-lg="60" flex-offset-gt-lg="20" class="md-padding" layout="row" layout-align="center center" layout-wrap>
-        <md-card flex-gt-sm="33" flex-sm="49" flex-xs="100" ng-repeat="p in projects">
+        <md-card class="project" ng-click="viewProject($event, p)" flex-gt-sm="33" flex-sm="49" flex-xs="100" ng-repeat="p in projects">
           <img ng-src="{{::p.img}}" class="md-card-image" alt="Material Red">
           <md-card-content layout="column">
             <div>
               <h3>{{::p.name}} <data style="float:right;font-weight:300;">{{::p.date}}</data></h3>
-              
             </div>
-            <div class="roles">{{::p.roles}}</div>
-     <!--      <div flex="50" style="text-align:right;">
-            <md-button class="md-icon-button" aria-label="Medium" href="//medium.com/@matt.tsui/recreating-material-wallpapers-in-svg-21f4949d76f2" target="_blank">
-              <md-icon md-font-icon="fa-medium" class="fa fa-lg"></md-icon>
-            </md-button>
-            <md-button class="md-icon-button" aria-label="Codepen" href="//codepen.io/mzqtsui/pen/NrpoNG" target="_blank">
-              <md-icon md-font-icon="fa-codepen" class="fa fa-lg"></md-icon>
-           </md-button>
-          </div> -->
+            <div class="desc">{{::p.desc}}</div>
           </md-card-content>
         </md-card>
       </div>
@@ -120,9 +111,6 @@
         </md-list>
       </div>
     </section>
-
-    
-  
     <footer>
       Matthew Tsui &copy; 2016
     </footer>
@@ -138,6 +126,7 @@
 
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
   
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TimelineMax.min.js"></script>
 
   <!-- Your application bootstrap  -->
   <script type="text/javascript">    
@@ -147,42 +136,43 @@
     var app = angular.module('BlankApp', ['ngMaterial']);
 
 
-    app.controller('AppCtrl', function($scope,$mdDialog,$window) {
+    app.controller('AppCtrl', function($scope,$mdDialog,$mdMedia, $window) {
       
       $scope.projects = [
         {
-          name: 'Material Red (SVG)',
-          roles: 'Web Developer',
+          name: 'Material Red',
+          desc: 'An experiment in SVG',
           img: 'img/material_red.jpg',
-          date: '2016'
+          date: '2016',
+          dialog: 'projects/material_red_dialog.tmpl.html'
         },
         {
           name: 'Palette Website',
-          roles: 'Design, Development, Illustration',
+          desc: 'Redesign, Development, Illustration',
           img: 'img/palette.jpg',
           date: '2015'
         },
         {
           name: 'PaletteApp2',
-          roles: 'Software Developer',
+          desc: 'Companion app for Palette hardware',
           img: 'img/paletteapp2.jpg',
           date: '2015'
         },
         {
           name: 'FastCards',
-          roles: 'Android Dev, Icon Design',
+          desc: 'Android flash card app',
           img: 'img/fastcards_logo.jpg',
           date: '2015'
         },
         {
           name: 'Slate',
-          roles: 'Game Design, UI',
+          desc: 'A 3D Projection-Mapped Unity Game',
           img: 'img/slate.jpg',
           date: '2014'
         },
         {
           name: 'Foodspokes',
-          roles: 'Web Developer',
+          desc: 'Supplier/Restaurant Databse Prototype',
           img: 'img/foodspokes.jpg',
           date: '2014'
         }
@@ -237,7 +227,39 @@
       $scope.sendMail = function(){
         $window.open("znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
       }
+
+      $scope.viewProject = function(ev, p){
+        console.log(p);
+        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+        $mdDialog.show({
+          controller: DialogController,
+          templateUrl: p.dialog,
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose:true,
+          fullscreen: useFullScreen
+        });
+        $scope.$watch(function() {
+          return $mdMedia('xs');
+        }, function(wantsFullScreen) {
+          $scope.customFullscreen = (wantsFullScreen === true);
+        });
+      }
+
+      
+
     });
+    function DialogController($scope, $mdDialog) {
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
   </script>
 
   <!--         <span id="obf"><script>document.getElementById("obf").innerHTML="<n pynff=\"cvax\" uers=\"znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg\" gnetrg=\"_oynax\">znggurj.md.gfhv@tznvy.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
