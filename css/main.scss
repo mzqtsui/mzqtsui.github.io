@@ -9,14 +9,13 @@ md-content{
 $c_gray: rgba(39,40,34,1);
 $c_pink: rgba(249,38,114,1);
 $c_green: rgba(166,226,46,1);
-$c_blue: rgba(102,217,239,1);
+$c_blue: rgba(66,165,245 ,1);
 $c_orange: rgba(253,151,31,1);
 $f_serif: "Roboto Slab", "Times New Roman", serif;
 $f_sans: Roboto, Helvetica, Arial, sans-serif;
 
 section{
     font-size:16px;
-    text-align:center;
     color:lighten(rgba(66,66,66 ,1), 20%);
     font-family: $f_sans;
 }
@@ -47,7 +46,28 @@ md-card img{
 }
 
 
+#experience, #education, #skills{
+    width:100%;
+    md-list{
+        width:100%;
+        max-width:600px;
+    }
 
+    h3{
+        font-weight:600;
+
+        data{
+            font-weight:400;
+            float:right;
+            font-size:1rem;
+        }
+    }
+
+    a{
+        text-decoration:none;
+        color: $c_blue;
+    }
+}
 
 
 h1{
@@ -56,6 +76,8 @@ h1{
     font-size:44px;
 }
 h2{
+    text-align:center;
+    margin-bottom:10px;
     font-size:1.8rem;
     font-weight:300;
     text-transform: uppercase;
@@ -74,6 +96,7 @@ h2{
     font-weight:300;
     font-size:17px;
     margin-top:0;
+    margin-bottom:10px;
     letter-spacing:0.8px;
     width:306px;
 }
@@ -83,9 +106,7 @@ h2{
         line-height:1.4;
     }
 }
-#toolbar{
-    margin-top:20px;
-    margin-bottom:40px;
+#links{
     .md-button{
         min-width:46px;
         min-height:46px;
@@ -96,7 +117,7 @@ h2{
     }
     .fa{
         font-size:20px;
-        color: lighten($c_pink,5%);
+        color: rgba(120,144,156 ,1);
         line-height:46px;
     }
     .fa-github{
@@ -106,7 +127,7 @@ h2{
 #featured{
     font-family: $f_sans;
     md-card{
-        max-width:360px;
+        max-width:320px;
     }
 
     h3{
@@ -127,4 +148,10 @@ h2{
 }
 md-tooltip{
     font-size:12px;
+}
+
+footer{
+    margin-bottom:20px;
+    font-size:0.8rem;
+
 }
