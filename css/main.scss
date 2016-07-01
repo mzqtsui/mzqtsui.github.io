@@ -1,48 +1,30 @@
-body{
-    background: rgba(236,239,241 ,1);
-    color: rgba(69,90,100 ,1);
-    font-size:62.5%;
-}
-md-content{
-    background: rgba(236,239,241 ,1);
-}
+
+$c_background: rgba(236,239,241 ,1);
 $c_gray: rgba(66,66,66 ,1);
-$c_pink: rgba(249,38,114,1);
-$c_green: rgba(166,226,46,1);
 $c_blue: rgba(66,165,245 ,1);
-$c_orange: rgba(253,151,31,1);
 $f_serif: "Roboto Slab", "Times New Roman", serif;
 $f_sans: Roboto, Helvetica, Arial, sans-serif;
 
 $md-whiteframe-4dp: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 
+body{
+    background: $c_background;
+    color: rgba(69,90,100 ,1);
+    font-size:62.5%;
+    font-family:$f_sans;
+}
+md-content{
+    background: $c_background;
+}
 section{
     font-size:16px;
-    color:lighten(rgba(66,66,66 ,1), 20%);
+    color:lighten($c_gray, 20%);
     font-family: $f_sans;
 }
-
-pink, .pink{
-    color: $c_pink;
-}
-
-green, .green{
-    color: $c_green;
-}
-
-blue, .blue{
-    color: $c_blue;
-}
-orange, .orange{
-    color: $c_orange;
-}
-
-
 
 md-card img{
     width:100%;
 }
-
 
 #experience, #education, #skills{
     width:100%;
@@ -71,7 +53,7 @@ md-card img{
 h1{
     font-family: $f_sans;
     font-weight:300;
-    font-size:44px;
+    font-size:2.75rem;
     color: rgba(66,66,66 ,1);
     text-transform: uppercase;
     span{
@@ -87,8 +69,6 @@ h2{
 }
 #name{
     margin-bottom:0;
-    
-    
 }
 #subtitle{
     font-family:$f_sans;
@@ -199,4 +179,8 @@ md-dialog{
     .fa{
         margin-left:5px;
     }
+}
+.right{
+    float:right;
+    font-weight:300;
 }
