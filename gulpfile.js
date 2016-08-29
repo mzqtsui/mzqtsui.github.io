@@ -14,7 +14,7 @@ var paths = {
     styles: ['src/css/**/*.scss'],
     images: ['src/img/**/*'],
     content: ['src/index.html'],
-    projects: ['src/projects/*']
+    projects: ['src/projects/**/*.html']
 }
 
 gulp.task('scripts', function() {
@@ -41,7 +41,7 @@ gulp.task('content', function(){
 });
 
 gulp.task('projects', function(){
-    return gulp.src(paths.content)
+    return gulp.src(paths.projects)
         .pipe(minifyhtml({
             empty: true,
             quotes: true
@@ -73,4 +73,4 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('default', ['watch', 'webserver', 'scripts', 'styles', 'content', 'images']);
+gulp.task('default', ['watch', 'webserver', 'scripts', 'styles', 'content', 'images', 'projects']);
