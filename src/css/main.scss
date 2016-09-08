@@ -8,13 +8,19 @@ $f_sans: Roboto, Helvetica, Arial, sans-serif;
 $md-whiteframe-4dp: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 
 body{
-    background: $c_background;
     color: rgba(69,90,100 ,1);
     font-size:62.5%;
     font-family:$f_sans;
 }
 md-content{
-    background: $c_background;
+    background: rgba(236,239,241,1);
+    background: -moz-linear-gradient(-45deg, rgba(236,239,241,1) 0%, rgba(236,239,241,1) 65%, rgba(204,204,204,1) 65%, rgba(204,204,204,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(236,239,241,1)), color-stop(65%, rgba(236,239,241,1)), color-stop(65%, rgba(204,204,204,1)), color-stop(100%, rgba(204,204,204,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(236,239,241,1) 0%, rgba(236,239,241,1) 65%, rgba(204,204,204,1) 65%, rgba(204,204,204,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(236,239,241,1) 0%, rgba(236,239,241,1) 65%, rgba(204,204,204,1) 65%, rgba(204,204,204,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(236,239,241,1) 0%, rgba(236,239,241,1) 65%, rgba(204,204,204,1) 65%, rgba(204,204,204,1) 100%);
+    background: linear-gradient(135deg, rgba(236,239,241,1) 0%, rgba(236,239,241,1) 65%, rgba(204,204,204,1) 65%, rgba(204,204,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eceff1', endColorstr='#cccccc', GradientType=1 );
 }
 section{
     font-size:16px;
@@ -24,6 +30,10 @@ section{
 
 md-card img{
     width:100%;
+}
+
+md-card md-card-content {
+    padding: 10px 16px;
 }
 
 #experience, #education, #skills{
@@ -90,6 +100,7 @@ h2{
         min-width:46px;
         min-height:46px;
         border-radius:50%;
+        margin: 4px;
     }
     .md-ripple-container{
         border-radius:50%;
@@ -183,4 +194,13 @@ md-dialog{
 .right{
     float:right;
     font-weight:300;
+}
+.location {
+    font-size: 14px;
+}
+.resume-download {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgba(25, 181, 254,1);
 }

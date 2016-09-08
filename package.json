@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
+    "critical": "^0.8.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^3.0.3",

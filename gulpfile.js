@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     concatify = require('gulp-concat')
     webserver = require('gulp-webserver'),
     minifyhtml = require('gulp-minify-html'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    critical = require('critical').stream;
 
 var paths = {
     scripts: ['src/js/**/*.js'],
@@ -18,7 +19,7 @@ var paths = {
 }
 
 gulp.task('scripts', function() {
-    gulp.src(paths.scripts)
+    return gulp.src(paths.scripts)
         .pipe(uglify())
         .pipe(concatify('app.js'))
         .pipe(rename('app.min.js'))
@@ -26,7 +27,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-    gulp.src(paths.styles)
+    return gulp.src(paths.styles)
         .pipe(sass())
         .pipe(gulp.dest('./css'));
 });
@@ -65,12 +66,18 @@ gulp.task('watch', function() {
     gulp.watch(paths.images, ['images']);
 });
 
-gulp.task('webserver', function() {
-    gulp.src('./')
+gulp.task('webserver', ['critical'],function() {
+    return gulp.src('./')
         .pipe(webserver({
             livereload: true,
             port: 9000
         }));
 });
 
-gulp.task('default', ['watch', 'webserver', 'scripts', 'styles', 'content', 'images', 'projects']);
+gulp.task('critical', ['content', 'scripts', 'styles', 'images', 'projects'], function() {
+    return gulp.src('.src/**/*.html')
+        .pipe(critical({base: './',  inline: true, minify: true}))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('default', ['watch', 'webserver']);
