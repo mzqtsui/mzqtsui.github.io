@@ -115,7 +115,7 @@
       name: "Front End Developer Nanodegree",
       sub: "",
       school: "Udacity",
-      date: "In Progress",
+      date: "2016",
       location: "Online"
     },
     {
@@ -180,5 +180,9 @@
   }
 
   DialogController.$inject = ['$scope', '$mdDialog'];
+
+  angular.element(document).ready(function() {
+    angular.bootstrap(document, ['MainApp']);
+  });
 
 })();
