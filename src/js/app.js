@@ -8,6 +8,13 @@
 
     $scope.projects = [
       {
+        name: 'Neighbourhood Map',
+        desc: 'Climbing Gyms in SF Area',
+        img: 'img/neighbourhood_map.jpg',
+        date: '2016',
+        dialog: 'projects/neighbourhood_map.tmpl.html'
+      },
+      {
         name: 'Time Bank',
         desc: 'UX Design Project',
         img: 'img/time.jpg',
