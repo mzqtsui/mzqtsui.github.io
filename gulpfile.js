@@ -1,6 +1,6 @@
-//https://github.com/udacity/fend-office-hours/tree/master/Front%20End%20Tools/Gulp
 
 var gulp = require('gulp'),
+    babel = require('gulp-babel'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass')
@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     minifyhtml = require('gulp-minify-html'),
     imagemin = require('gulp-imagemin'),
-    critical = require('critical').stream;
+    critical = require('critical').stream,
+    wrap = require('gulp-wrap-js');
 
 var paths = {
     scripts: ['src/js/app.js',
@@ -25,13 +26,18 @@ var paths = {
 gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
         .pipe(concatify('app.js'))
+        .pipe(babel({
+            'presets': ['es2015']
+        }))
+        .pipe(wrap('(function(){ %= body % })();'))
         .pipe(rename('app.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./js/'));
 });
 
 gulp.task('styles', function() {
     return gulp.src(paths.styles)
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('./css'));
 });
 
