@@ -48,20 +48,7 @@
         </md-card>
       </div>
     </section>
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <div flex="60" flex-offset="20" flex-xs="100" flex-offset-xs="0"  class="md-padding" layout="column" layout-align="center center">
-        <md-list flex>
-           <md-list-item class="md-3-line" ng-repeat="place in workplaces">
-            <div class="md-list-item-text" layout="column">
-              <h3>{{ place.role }} <data class="right location">{{ place.location }}</data></h3>
-              <h4><a ng-href="{{ place.url }}" target="_blank">{{ place.name }}</a></h4>
-              <p>{{ place.date }}</p>
-            </div>
-          </md-list-item>
-        </md-list>
-      </div>
-    </section>
+    <work-experience id="experience"></work-experience>
     <section id="education">
       <h2>Education</h2>
       <div flex="60" flex-offset="20" flex-xs="100" flex-offset-xs="0"  class="md-padding" layout="column" layout-align="center center">
