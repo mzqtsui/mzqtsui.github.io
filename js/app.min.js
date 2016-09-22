@@ -73,10 +73,26 @@
       },
       {
         name: 'Material Red',
+        titleBold: 'Material',
+        titleThin: 'Red',
+        skills: 'HTML5 . SCSS . SVG',
         summary: 'An experiment in SVG',
         img: 'img/material_red.jpg',
         date: '2016',
-        dialog: 'projects/material_red_dialog.tmpl.html'
+        dialog: 'projects/project_dialog.tmpl.html',
+        desc: 'An HTML/CSS exercise focused on SVG, inspired by Carl Kleiner\'s paperscapes for Android Marshmallow. ',
+        links: [
+          {
+            caption: 'Code',
+            fa: 'fa-codepen',
+            href: 'https://codepen.io/mzqtsui/pen/NrpoNG'
+          },
+          {
+            caption: 'Read more on Medium',
+            fa: 'fa-medium',
+            href: 'https://medium.com/@matt.tsui/recreating-material-wallpapers-in-svg-21f4949d76f2'
+          }
+        ]
       },
       {
         name: 'Upscale Markets',
@@ -93,18 +109,22 @@
         dialog: 'projects/palette_site_dialog.tmpl.html'
       },
       {
-        name: 'PaletteApp2',
-        summary: 'Companion app for Palette hardware',
-        img: 'img/paletteapp2.jpg',
-        date: '2015',
-        dialog: 'projects/paletteapp_dialog.tmpl.html'
-      },
-      {
         name: 'FastCards',
+        titleBold: 'Fast',
+        titleThin: 'Cards',
+        skills: 'Android . Java . Illustrator',
         summary: 'Android flash card app',
         img: 'img/fastcards_logo.jpg',
         date: '2015',
-        dialog: 'projects/fastcards_dialog.tmpl.html'
+        dialog: 'projects/project_dialog.tmpl.html',
+        desc: 'An Android flash card app done for a fourth-year group project. I worked on software architecture and planning, feature implementation, and logo design.',
+        links: [
+          {
+            caption: 'Get it on Google Play',
+            fa: 'fa-play',
+            href: 'https://play.google.com/store/apps/details?id=com.fastcards'
+          }
+        ]
       },
       {
         name: 'Slate',
@@ -136,7 +156,6 @@
     }
 
   }]);
-
 
   function DialogController($scope, $mdDialog, project) {
     $scope.project = project;
