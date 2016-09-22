@@ -14,7 +14,7 @@
   </md-dialog-content>
   <md-dialog-actions layout="row">
     <span flex></span>
-    <md-button ng-repeat="item in project.links" href="{{::item.href}}">
+    <md-button ng-repeat="item in project.links" href="{{::item.href}}" target="_blank">
       {{::item.caption}}  <i class="fa fa-lg" ng-class="item.fa"></i>
     </md-button>
   </md-dialog-actions>

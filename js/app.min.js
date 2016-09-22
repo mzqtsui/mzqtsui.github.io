@@ -32,17 +32,44 @@
       },
       {
         name: 'Time Bank',
+        titleBold: 'Time',
+        titleThin: 'Bank',
+        skills: 'UX Design . Paper Prototyping',
         summary: 'UX Design Project',
         img: 'img/time.jpg',
         date: '2016',
-        dialog: 'projects/timebank_dialog.tmpl.html'
+        dialog: 'projects/project_dialog.tmpl.html',
+        desc: 'What if time was a currency, and you could trade it for services?',
+        links: [
+          {
+            caption: 'Read more on Medium',
+            fa: 'fa-medium',
+            href: 'https://medium.com/@matt.tsui/creating-a-time-bank-5a1a719e85f4'
+          }
+        ]
       },
       {
         name: 'Bugs & Baubles',
+        titleBold: 'Bugs&',
+        titleThin: 'Baubles',
+        skills: 'HTML5 . SCSS . JavaScript',
         summary: 'Frogger Clone',
         img: 'img/bug_game.jpg',
         date: '2016',
-        dialog: 'projects/frogger_dialog.tmpl.html'
+        dialog: 'projects/project_dialog.tmpl.html',
+        desc: 'A Frogger clone, with some gem collecting, developed using the best practices in Object Oriented JavaScript.',
+        links: [
+          {
+            caption: 'Repo',
+            fa: 'fa-github',
+            href: 'https://github.com/mzqtsui/frontend-nanodegree-arcade-game'
+          },
+          {
+            caption: 'Play',
+            fa: 'fa-globe',
+            href: 'https://mzqtsui.github.io/frontend-nanodegree-arcade-game'
+          }
+        ]
       },
       {
         name: 'Material Red',
@@ -113,6 +140,7 @@
 
   function DialogController($scope, $mdDialog, project) {
     $scope.project = project;
+
     $scope.cancel = function() {
       $mdDialog.cancel();
     };
