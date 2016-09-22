@@ -3,8 +3,8 @@
   var app = angular.module('MainApp', ['ngMaterial']);
 
 
-  app.controller('AppCtrl', ['$scope', '$mdDialog', '$mdMedia', '$window' ,
-    function($scope, $mdDialog, $mdMedia, $window) {
+  app.controller('AppCtrl', ['$scope', '$mdDialog', '$mdMedia',
+    function($scope, $mdDialog, $mdMedia) {
 
     $scope.projects = [
       {
@@ -72,88 +72,6 @@
       }
     ];
 
-    $scope.workplaces = [
-      {
-        name: 'Palette',
-        role: 'Software Developer',
-        date: 'Sep 2015 - Dec 2015',
-        location: 'Kitchener, Canada',
-        url: '//palettegear.com'
-      },
-      {
-        name: 'Imagine Communications',
-        role: 'Application Developer',
-        date: 'Jan 2015 - Apr 2015',
-        location: 'Waterloo, Canada',
-        url: '//www.imaginecommunications.com'
-      },
-      {
-        name: 'Christie Digital Systems',
-        role: 'Unity Developer',
-        date: 'Jan 2014 - Apr 2014',
-        location: 'Kitchener, Canada',
-        url: '//www.christiedigital.com'
-      },
-      {
-        name: 'MyPlanet',
-        role: 'Fellow',
-        date: 'Jan 2014 - Mar 2014',
-        location: 'Toronto, Canada',
-        url: '//www.myplanet.com'
-      },
-      {
-        name: 'BMO InvestorLine',
-        role: 'eBusiness Specialist',
-        date: 'Jan 2013 - Apr 2013',
-        location: 'Toronto, Canada',
-        url: '//www.bmo.com/self-directed'
-      },
-      {
-        name: 'Infoskill Intelligent Solutions Inc.',
-        role: 'Wordpress Developer',
-        date: 'May 2012 - August 2012',
-        location: 'Toronto, Canada',
-        url: '//infoskill.com'
-      }
-    ];
-
-    $scope.education = [
-    {
-      name: "Front End Developer Nanodegree",
-      sub: "",
-      school: "Udacity",
-      date: "2016",
-      location: "Online"
-    },
-    {
-      name: "Intro to the Design of Everyday Things",
-      sub: "",
-      school: "Udacity",
-      date: "2016",
-      location: "Online"
-    },
-    {
-      name: "Bachelor of Computer Science",
-      sub: "Software Engineering",
-      school: "University of Waterloo",
-      date: "2011 - 2016",
-      location: "Canada"
-    },
-    {
-      name: "Bachelor of Business Administration",
-      sub: "Marketing",
-      school: "Laziridis School of Business",
-      date: "2011 - 2016",
-      location: "Canada"
-    },
-
-    ];
-
-
-    $scope.sendMail = function(){
-      $window.open("znvygb:znggurj.md.gfhv@tznvy.pbz?fhowrpg=Jrofvgr - Pbagnpg".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-    }
-
     $scope.viewProject = function(ev, p){
       var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
       $mdDialog.show({
@@ -170,8 +88,6 @@
         $scope.customFullscreen = (wantsFullScreen === true);
       });
     }
-
-
 
   }]);
   function DialogController($scope, $mdDialog) {
