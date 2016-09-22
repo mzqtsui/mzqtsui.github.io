@@ -11,7 +11,9 @@ var gulp = require('gulp'),
     critical = require('critical').stream;
 
 var paths = {
-    scripts: ['src/js/**/*.js'],
+    scripts: ['src/js/app.js',
+              'src/js/components/links.js'
+            ],
     styles: ['src/css/**/*.scss'],
     images: ['src/img/**/*'],
     content: ['src/index.html'],
@@ -20,7 +22,6 @@ var paths = {
 
 gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
-        .pipe(uglify())
         .pipe(concatify('app.js'))
         .pipe(rename('app.min.js'))
         .pipe(gulp.dest('./js/'));
