@@ -12,7 +12,8 @@ var gulp = require('gulp'),
 
 var paths = {
     scripts: ['src/js/app.js',
-              'src/js/components/links.js'
+              'src/js/components/links.js',
+              'src/js/components/experience.js'
             ],
     styles: ['src/css/**/*.scss'],
     images: ['src/img/**/*'],
