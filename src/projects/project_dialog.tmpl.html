@@ -1,0 +1,21 @@
+<md-dialog aria-label="{{::project.name}}">
+  <md-dialog-content>
+    <md-button class="md-icon-button close-button" ng-click="cancel()">
+      <md-icon md-font-icon="fa-close" class="fa fa-lg" aria-label="Close dialog"></md-icon>
+    </md-button>
+    <img class="header-img" alt="{{::project.name}}" ng-src="{{::project.img}}">
+    <div class="md-dialog-content">
+      <h1><span>{{::project.titleBold}}</span>{{::project.titleThin}}</h1>
+      <p class="skills">{{::project.skills}}</p>
+      <p>
+        {{::project.desc}}
+      </p>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-repeat="item in project.links" href="{{::item.href}}">
+      {{::item.caption}}  <i class="fa fa-lg" ng-class="item.fa"></i>
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>
